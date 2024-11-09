@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+
+</head>
+<body>
+    <h1 class="text-center m-10 text-4xl">Event Bubbling </h1>
+    <div class="grid grid-cols-3 gap-5">
+        <div>
+            <div id="grandparent" class="p-10 mb-10 bg-[#fdba74] border-[1px] border-black max-w-lg mx-auto cursor-pointer hover:scale-105 duration-700 rounded-xl">
+                <p class="text-3xl text-center mb-2">👨🏽‍🦳</p>
+                <p class="text-3xl text-center mb-2">Call Grand Parent 🤙</p>
+
+    
+                <div id="parent" class="p-10 bg-[#f0abfc] border-[1px] border-black max-w-lg mx-auto shadow-lg cursor-pointer hover:scale-105 duration-700 rounded-xl">
+                    <p class="text-3xl text-center mb-2">👨🏽</p>
+                    <p class="text-3xl text-center mb-2">Call Parent 🤙</p>
+    
+                    <div id="child" class="p-10 bg-[#86efac] border-[1px] border-black max-w-lg mx-auto shadow-lg cursor-pointer hover:scale-105 duration-700 rounded-xl ">
+                        <p class="text-3xl text-center mb-2">👶</p>
+                        <p class="text-3xl text-center mb-2">Call Child 🤙</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="flex justify-center items-center">
+            <label class="text-xl mr-2">Stop Propagation using <span class="text-3xl font-semibold mr-2">e.stopPropagation()</span> </label>
+            <input
+                id="checkbox"
+                type="checkbox"
+                class="text-7xl p-10"
+            />
+        </div>
+
+        <div>
+            <h2 class="text-center m-10 text-5xl">Event Propogation</h2>
+            <p class="text-4xl text-center my-10" id="propogationGrandParent">_</p>
+            <p class="text-4xl text-center my-10" id="propogationParent">_</p>
+            <p class="text-4xl text-center my-10" id="propogationChild">_</p>
+        </div>
+    </div>
+
+   
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
