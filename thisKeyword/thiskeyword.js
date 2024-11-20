@@ -2,6 +2,8 @@
 
 /* In Global Space */
 
+
+
 // In the global context, "this" refers to the global object.
 // In a browser, this is the window object; in Node.js, it's the global object.
 console.log(this); // Outputs: global object (window in browsers, global in Node.js)
