@@ -25,9 +25,32 @@
    - [Deep Copy and Shallow Copy](#deep-copy-and-shallow-copy)
    - [this Keyword in Functions and Arrow Functions](#this-keyword-in-functions-and-arrow-functions)
 
+
+
+
 2. [Machine Coding Challenges](#machine-coding-challenges)
-   - [Flatten a 2D Array](#flatten-a-2d-array)
-   - [Find Unique Elements in an Array](#find-unique-elements-in-an-array)
+   
+   1. Create a Dynamic Todo List App
+
+      Problem Statement:
+      1. Build a Todo List application with the following features:
+         •	Add a task with a name and description.
+         •	Mark tasks as completed.
+         •	Edit a task.
+         •	Delete a task.
+         •	Filter tasks by their completion status (All, Completed, Pending).
+
+         Requirements:
+            •	Use React functional components and hooks (useState, useEffect).
+            •	Maintain proper folder structure (e.g., components, utils, etc.).
+            •	Ensure a responsive UI with basic styling.
+
+   2. Swapping of complete todo to incomplete and vice versa and also impletenment search todo with debuncing  
+
+   3. const arr = [[1,2,3], [2,3,4], [3,4,5]] find unique elements in new array list
+
+
+
 
 3. [Code Snippet Questions](#code-snippet-questions)
 
@@ -108,11 +131,40 @@
 
 ## Machine Coding Challenges
 
-### Flatten a 2D Array
-- Implementing a solution to flatten a nested array structure.
+### 1. Create a Dynamic Todo List App
 
-### Find Unique Elements in an Array
-- Writing a function to identify unique elements from an array.
+**Problem Statement**:  
+Build a Todo List application with the following features:
+- Add a task with a name and description.
+- Mark tasks as completed.
+- Edit a task.
+- Delete a task.
+- Filter tasks by their completion status (All, Completed, Pending).
+
+**Requirements**:
+- Use React functional components and hooks (useState, useEffect).
+- Maintain a proper folder structure (e.g., components, utils, etc.).
+- Ensure a responsive UI with basic styling.
+
+---
+
+### 2. Swapping Todo Completion Status
+
+**Problem Statement**:  
+Implement functionality to swap the completion status of a todo item from completed to incomplete and vice versa. Additionally, implement a search feature for todos with debouncing.
+
+---
+
+### 3. Find Unique Elements in a Nested Array
+
+**Problem Statement**:  
+Given a nested array, find unique elements and return them in a new array.
+
+**Example**:
+```javascript
+const arr = [[1, 2, 3], [2, 3, 4], [3, 4, 5]];
+// Output: [1, 2, 3, 4, 5]
+```
 
 ---
 
