@@ -51,7 +51,6 @@
 
 
 
-
 3. [Code Snippet Questions](#code-snippet-questions)
 
 4. [Data Structures and Algorithms (DSA) Topics](#data-structures-and-algorithms-dsa-topics)
@@ -181,6 +180,17 @@ const arr = [[1, 2, 3], [2, 3, 4], [3, 4, 5]];
    }
    obj.b(); // Output: undefined, Window object
    obj.c(); // Output: 10, obj
+
+
+
+   console.log("5"+3); // 53
+   console.log(5+"3"); // 53
+   console.log(5+true); // 6
+   console.log(5+false); // 5
+   console.log("5"-3); // 2
+   console.log(5-"3"); // 2
+   console.log("5"*3); // 15
+   console.log(5*"3"); // 15
    ```
 
 2. **Delete Operator**

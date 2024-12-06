@@ -51,3 +51,104 @@ function grandparent() {
 }
 
 grandparent(); // Invoke the grandparent function
+
+
+
+
+
+
+
+function createShoppingCart() {
+    let cart = []; // Cart is private to this function
+
+    return {
+        addItem: (item) => {
+            cart.push(item);
+            console.log(`${item} added to your cart.`);
+        },
+        removeItem: (item) => {
+            const index = cart.indexOf(item);
+            if (index > -1) {
+                cart.splice(index, 1);
+                console.log(`${item} removed from your cart.`);
+            } else {
+                console.log(`${item} is not in your cart.`);
+            }
+        },
+        viewCart: () => {
+            console.log("Your cart contains:", cart.length > 0 ? cart : "No items in the cart.");
+        },
+    };
+}
+
+// Create a cart for a user
+const myCart = createShoppingCart();
+
+// Add items to the cart
+myCart.addItem("Apple");
+myCart.addItem("Banana");
+myCart.viewCart(); // Your cart contains: ['Apple', 'Banana']
+
+// Remove an item
+myCart.removeItem("Apple");
+myCart.viewCart(); // Your cart contains: ['Banana']
+
+// Try to access the cart variable directly (will fail)
+console.log(typeof cart); // Undefined, as cart is private
+
+
+
+
+
+
+
+
+function createAuthSystem() {
+    let userData = null; // Private variable to store logged-in user data
+
+    return {
+        login: (username, password) => {
+            // Simulated authentication logic
+            if (username === "admin" && password === "1234") {
+                userData = { username: "admin", role: "admin" }; // Save user data
+                console.log("Login successful!");
+            } else {
+                console.log("Invalid credentials.");
+            }
+        },
+        logout: () => {
+            if (userData) {
+                console.log(`${userData.username} logged out.`);
+                userData = null; // Clear user data
+            } else {
+                console.log("No user is logged in.");
+            }
+        },
+        getUser: () => {
+            if (userData) {
+                return userData; // Return private user data
+            } else {
+                console.log("No user is logged in.");
+                return null;
+            }
+        },
+    };
+}
+
+// Create an authentication instance
+const auth = createAuthSystem();
+
+// Try to access user data (not possible directly)
+console.log(typeof userData); // "undefined"
+
+// Log in as admin
+auth.login("admin", "1234"); // Login successful!
+
+// Access user details
+console.log(auth.getUser()); // { username: "admin", role: "admin" }
+
+// Log out
+auth.logout(); // admin logged out.
+
+// Try accessing user details after logout
+console.log(auth.getUser()); // No user is logged in.

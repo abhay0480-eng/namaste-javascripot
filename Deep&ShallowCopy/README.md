@@ -17,6 +17,7 @@ Primitive data types include the following:
 When you create these values, they are tightly coupled with the variable they are assigned to. They only exist once, meaning you do not have to worry about copying primitive data types in JavaScript. When you make a copy, it will be a real copy. 
 
 **Example:**
+
 ```
 const a = 5;
 let b = a; // this is the copy

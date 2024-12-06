@@ -88,3 +88,8 @@ const squareData = transformData(square)([1, 2, 3, 4]);
 // Log the transformed data
 console.log(doubleData); // Outputs: [2, 4, 6, 8]
 console.log(squareData); // Outputs: [1, 4, 9, 16]
+
+
+
+
+

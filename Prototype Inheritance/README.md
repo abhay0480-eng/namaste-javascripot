@@ -30,7 +30,7 @@ console.log(child.greet); // "Hi" (own property)
 
 ### Example:
 
-```
+``` 
 function Person(name) {
 this.name = name;
 }
