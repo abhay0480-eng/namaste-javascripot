@@ -61,4 +61,39 @@ const listOfPeopleAgeLessThan30byReduce = data.reduce((acc,curr) => {
 console.log("listOfPeopleAgeLessThan30byReduce",listOfPeopleAgeLessThan30byReduce);
 
 
+// Input: 
+// [
+//   { category: 'fruit', name: 'apple' },
+//   { category: 'fruit', name: 'banana' },
+//   { category: 'vegetable', name: 'carrot' },
+// ]
+// Output:
+// {
+//   fruit: [{ name: 'apple' }, { name: 'banana' }],
+//   vegetable: [{ name: 'carrot' }]
+// }
+
+
+const arrw = [
+    { category: 'fruit', name: 'apple' },
+    { category: 'fruit', name: 'banana' },
+    { category: 'vegetable', name: 'carrot' },
+  ]
+
+
+  const occ = (arrw) => {
+     return arrw.reduce((acc, curr) => {
+          if(curr.category in acc){
+              acc[curr.category].push([{name: curr.name}]) 
+          }else{
+              acc[curr.category] =[{name: curr.name}]
+          }
+
+          return acc
+      },{})
+  }
+
+  console.log(occ(arrw));
+
+
 

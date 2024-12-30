@@ -1,95 +1,124 @@
 
 /* Function Currying */
 
-/* Basic Example: Add two Numbers */
+/* *************** 1. Partial Application *********************************************************/
 
-// Function that takes one argument and returns another function
-function add(x) {
-    // Inner function takes the second argument
+// Curried function
+function multiply(x) {
     return function(y) {
-        // Returns the sum of x and y
+        return x * y;
+    }
+}
+
+const double2 = multiply(2); // Partially applied function
+console.log(double2(5)); // Outputs: 10
+
+
+
+//normal function
+function multiply(x, y) {
+    return x * y;   
+}
+
+const double23 = (y) => multiply(2, y); // Requires a wrapper function
+console.log(double23(5)); // Outputs: 10
+
+
+
+
+/* ******************* 2. Function Composition ************************************** */
+
+// Currying makes it easier to compose functions together, allowing you to create new functions by combining existing ones.
+
+/* Currying function */
+function add(x) {
+    return function(y) {
         return x + y;
     }
 }
 
-// Create a specialized function that adds 3
-const add3 = add(3);
-
-// Log the results of adding 3 to 10 and 15
-console.log(add3(10)); // Outputs: 13
-console.log(add3(15)); // Outputs: 18
-
-
-/* Intermediate Example: Multiply */
-
-// Function that takes one argument and returns a function
 function multiply(x) {
-    // Inner function takes the second argument
     return function(y) {
-        // Returns another function that takes the third argument
-        return function(z) {
-            // Returns the product of x, y, and z
-            return x * y * z;
-        }
+        return x * y;
     }
 }
 
-// Create a specialized function that multiplies by 2
+const add3 = add(3);
 const multiplyBy2 = multiply(2);
-// Create a specialized function that multiplies by 2 and 5
-const multiplyBy2and5 = multiplyBy2(5);
 
-// Log the result of multiplying 2, 5, and 10
-console.log(multiplyBy2and5(10)); // Outputs: 100
+const add3ThenMultiplyBy2 = function(z) {
+    return multiplyBy2(add3(z));
+};
+
+console.log(add3ThenMultiplyBy2(4)); // Outputs: 14
 
 
-/* Advanced Example: String Separator */
+/* normal function */
+function add(x, y) {
+    return x + y;
+}
 
-// Function that takes a separator and returns a function
-function formatSeperator(separator) {
-    // Inner function takes a prefix
-    return function(prefix) {
-        // Returns another function that takes a suffix
-        return function(suffix) {
-            // Returns a formatted string with prefix, separator, and suffix
-            return `${prefix} ${separator} ${suffix}`;
-        }
+function multiply(x, y) {
+    return x * y;
+}
+
+// Function composition is less elegant
+function add3ThenMultiplyBy2(z) {
+    return multiply(2, add(3, z)); // Requires knowledge of both functions
+}
+
+console.log(add3ThenMultiplyBy2(4)); // Outputs: 14
+
+
+
+/* ********************************** 3. Higher-Order Functions ************************************************
+Currying naturally leads to the creation of higher-order functions, which can return other functions. This is less intuitive with normal functions. */
+
+// curried function
+function createGreeting(greeting) {
+    return function(name) {
+        return `${greeting}, ${name}!`;
     }
 }
 
-// Create a specialized function that formats with a dash
-const formatwithdash = formatSeperator("-");
-// Create a specialized function that prefixes with "Hello"
-const formatwithdashandhello = formatwithdash("Hello");
-
-// Log the formatted string
-console.log(formatwithdashandhello("abhay")); // Outputs: "Hello - abhay"
+const sayHello = createGreeting("Hello");
+console.log(sayHello("Alice")); // Outputs: "Hello, Alice!"
 
 
-/* Real Use Cases: Data Transformation */
+// normal function
+function createGreeting(greeting, name) {
+    return `${greeting}, ${name}!`; // Requires both arguments at once
+}
 
-// Function that takes a transformation function and returns a function
-function transformData(func) {
-    // Inner function takes an array of data
-    return function(dataArray) {
-        // Maps the transformation function over the data array
-        return dataArray.map(func);
+console.log(createGreeting("Hello", "Alice")); // Outputs: "Hello, Alice!"
+
+
+
+/* ************************************** 4. Easier Testing and Debugging ****************************************
+
+Curried functions can be easier to test in isolation since they are often smaller and focused on a single task. */
+
+// curried function
+function add(x) {
+    return function(y) {
+        return x + y;
     }
 }
 
-// Transformation functions
-const double = (x) => x * 2; // Function to double a number
-const square = (x) => x * x; // Function to square a number
+// Testing add(3) separately
+const add32 = add(3);
+console.log(add32(4)); // Outputs: 7
 
-// Create specialized functions for doubling and squaring data
-const doubleData = transformData(double)([1, 2, 3, 4]);
-const squareData = transformData(square)([1, 2, 3, 4]);
+//normal function
+function add(x, y) {
+    return x + y;
+}
 
-// Log the transformed data
-console.log(doubleData); // Outputs: [2, 4, 6, 8]
-console.log(squareData); // Outputs: [1, 4, 9, 16]
+// Testing requires both parameters
+console.log(add(3, 4)); // Outputs: 7
 
 
-
+/* Conclusion
+While normal functions are versatile and can handle many scenarios, function currying provides specific advantages in terms of partial application, function composition, higher-order functions, and modularity. These features can lead to cleaner, more maintainable, and more expressive code, especially in functional programming paradigms. */
 
 

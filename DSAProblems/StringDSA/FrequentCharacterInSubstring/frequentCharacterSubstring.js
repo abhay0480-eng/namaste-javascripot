@@ -16,6 +16,10 @@ const mostfrequentCharacter = (str) => {
         }
         return acc
     },{})
+    
+
+   
+    
 
     let maxfrequency = 0;
     let mostFrequentChar = ""

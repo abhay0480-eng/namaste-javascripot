@@ -1,19 +1,13 @@
-const str = "dgjhttttttsdsdyabcdyyy"
+const checkAnagram = (str1, str2) => {
+    const normalize = (str) => str.replace(/\s+/g, '').toLowerCase()
 
-const uniqueSubstring = (str) => {
-    let output = new Set()
-    for (let i = 0; i < str.length; i++) {
-        for (let j = i+1; j < str.length; j++) {
-            output.add(str.slice(i,j))
-        }        
-    }
-    return Array.from(output)
+    str1 = normalize(str1) 
+    str2 = normalize(str2) 
+
+    if(str1.length !== str2.length) return false
+
+    return str1.split('').toSorted().join('') === str2.split('').toSorted().join('')
 }
 
-console.log(uniqueSubstring(str));
-
-
-
-
-
-
+console.log(checkAnagram("apple", "leapp"));
+console.log(checkAnagram("apple", "leapo"));
