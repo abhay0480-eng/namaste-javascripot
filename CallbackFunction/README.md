@@ -14,14 +14,14 @@ Here’s a simple example of a callback function in JavaScript:
 
 ```
 function fetchData(callback) {
-setTimeout(() => {
-const data = { name: "John", age: 30 };
-callback(data); // Calling the callback function with the data
-}, 1000);
-}
-fetchData((data) => {
-console.log("Data received:", data);
-});
+    setTimeout(() => {
+        const data = { name: "John", age: 30 };
+        callback(data); // Calling the callback function with the data
+        }, 1000);
+    }
+    fetchData((data) => {
+    console.log("Data received:", data);
+    });
 
 ```
 
