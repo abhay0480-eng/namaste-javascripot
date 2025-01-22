@@ -15,11 +15,6 @@ const findAllUniqueSubstrings = (str) => {
 console.log(findAllUniqueSubstrings(str));
 
 
-
-
-
-
-
 let str1 = "dgjhttttttsdsdyabcdyy"
 
 

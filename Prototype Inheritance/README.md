@@ -6,8 +6,7 @@ Every JavaScript object has an internal property called `[[Prototype]]`. A proto
 ## 2. What is Prototypal Inheritance?
 Prototypal inheritance allows an object to inherit properties and methods from another object through the prototype chain. This can be visualized as a chain of objects where one object can "borrow" functionality from another.
 
-## 3. How Does it Work?
-When accessing a property or method, JavaScript follows this order:
+ When accessing a property or method, JavaScript follows this order:
 1. It first checks the object itself.
 2. If not found, it looks in the object's prototype.
 3. This process continues up the prototype chain until it reaches `null`, which signifies the end of the chain.
@@ -28,6 +27,9 @@ console.log(child.greet); // "Hi" (own property)
 - **Code Reuse**: Instead of duplicating methods for every object, define them once in the prototype.
 - **Memory Efficiency**: Shared methods are stored in one place rather than copied to each object.
 
+
+
+```
 ### Example:
 
 ``` 
@@ -42,6 +44,8 @@ console.log(Hello, my name is ${this.name});
 const abhay = new Person("Abhay");
 abhay.sayHello(); // "Hello, my name is Abhay"
 ```
+
+
 
 
 

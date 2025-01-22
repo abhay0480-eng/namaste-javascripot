@@ -24,3 +24,32 @@ const nonRepeatElement = (arr) => {
 }
 
 console.log(nonRepeatElement(arr));
+
+
+
+
+function firstNonRepeatingElement(){
+
+    let firstNonRepeatingElement = ""
+
+    for (let index = 0; index < arr.length; index++) {
+       let flag = false
+       for (let j = index+1; j < arr.length; j++) {
+            if(arr[index] !== arr[j]){
+                flag = false
+            }else{
+                flag = true
+                break;
+            }        
+       }
+
+       if(!flag){
+        firstNonRepeatingElement = arr[index]
+        break;
+       }
+    }
+
+    return firstNonRepeatingElement
+}
+
+console.log(firstNonRepeatingElement());

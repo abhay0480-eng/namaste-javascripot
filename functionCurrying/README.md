@@ -20,7 +20,7 @@ Function currying is a powerful technique in JavaScript that transforms a functi
 ## What is Function Currying?
 
 Function currying is a technique where a function is transformed into a sequence of functions, each taking a single argument. This allows for partial application of functions, meaning you can create specialized functions by pre-filling some arguments. Currying is particularly useful in functional programming and can lead to cleaner and more modular code.
-
+   
 ---
 
 ## Why Use Function Currying?

@@ -15,4 +15,4 @@ const findSecondLargest = (arr) => {
   };
   
   const arr = [23, 12, 16, 88, 54, 23, 8];
-  console.log(findSecondLargest(arr)); //   
+  console.log(findSecondLargest(arr));
