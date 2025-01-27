@@ -27,7 +27,6 @@ console.log(nonRepeatElement(arr));
 
 
 
-
 function firstNonRepeatingElement(){
 
     let firstNonRepeatingElement = ""

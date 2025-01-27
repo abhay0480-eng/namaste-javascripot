@@ -1,7 +1,7 @@
 # Prototype and Prototypal Inheritance in JavaScript
 
 ## 1. What is a Prototype?
-Every JavaScript object has an internal property called `[[Prototype]]`. A prototype is an object from which other objects inherit properties and methods.
+Every JavaScript object has an internal property called `[[Prototype]]`. A prototype is an object from which other objects inherit properties and methods.the prototype is used to add properties or methods to a function at a later stage that can be accessible across all its instances.
 
 ## 2. What is Prototypal Inheritance?
 Prototypal inheritance allows an object to inherit properties and methods from another object through the prototype chain. This can be visualized as a chain of objects where one object can "borrow" functionality from another.

@@ -53,6 +53,23 @@ function grandparent() {
 grandparent(); // Invoke the grandparent function
 
 
+function x(){
+
+    function closure(num){
+        setTimeout(() => {
+            console.log(num);
+        }, num * 1000)
+    }
+
+    for (let i = 0; i < 5; i++) {
+        closure(i)        
+    }
+}
+
+x()
+
+
+
 
 
 
