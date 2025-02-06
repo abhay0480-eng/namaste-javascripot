@@ -21,6 +21,6 @@ function maxConsecutiveCount(arr){
     
 }
 
-const arr = [1, 1, 9, 1, 9, 19, 7, 1, 1, 1, 2, 5, 1]
+    const arr = [1, 1, 9, 1, 9, 19, 7, 1, 1, 1, 2, 5, 1]
 
-console.log(maxConsecutiveCount(arr));
+    console.log(maxConsecutiveCount(arr));

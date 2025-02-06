@@ -35,3 +35,26 @@ const calculate = (logic, radius) => {
 console.log(calculate(area, radius));
 console.log(calculate(circumference, radius));
 console.log(calculate(diameter, radius));
+
+
+
+/* HOF function Rate Limiting */
+
+
+
+function debounce(func, delay) {
+    let timeoutId;
+    return (...args) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => func(...args), delay);
+    };
+  }
+  
+  // Debounce a search input handler
+  const debouncedSearch = debounce((query) => {
+    console.log("Searching for:", query);
+  }, 300);
+  
+  document.getElementById("searchInput").addEventListener("input", (e) => {
+    debouncedSearch(e.target.value);
+  });

@@ -9,17 +9,17 @@ const k = 2
 
 
 const rotate = (arr,k) => {
-    k = k % arr.length; 
+    k = ((k % arr.length) + arr.length) % arr.length;
     console.log(k);
     let output = []
     
-   for (let i = arr.length -k ; i < arr.length ; i++) {
+   for (let i = arr.length - k; i < arr.length; i++) {
         console.log(parseInt(i));
         
         output.push(arr[parseInt(i)])
    }
 
-   for (let i = 0; i < arr.length - k ; i++) {
+   for (let i = 0; i < arr.length - k; i++) {
     console.log(parseInt(i));
         
     output.push(arr[parseInt(i)])

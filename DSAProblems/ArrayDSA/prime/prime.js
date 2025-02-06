@@ -1,18 +1,7 @@
-function isPrime(number){
-    if(number <= 1){
-        return false
+function isPrime(num) {
+    if (num <= 1) return false; // Numbers less than or equal to 1 are not prime
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false; // If divisible by any number other than 1 and itself
     }
-    console.log(Math.sqrt(number));
-    
-
-    for (let i = 2; i < Math.sqrt(number); i++) {
-        if(number % i === 0){
-            return false
-        }                
-    }
-
-    return true
+    return true; // Number is prime
 }
-
-console.log(isPrime(17));
-console.log(isPrime(24));

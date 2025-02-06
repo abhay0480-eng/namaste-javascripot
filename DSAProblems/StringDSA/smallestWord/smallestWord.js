@@ -17,7 +17,6 @@ function findSmallestWord(str){
         }
     }
 
-
     return {minFrequency:minFrequency, smallestWord:smallestWord}
 }
 

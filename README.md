@@ -4,6 +4,9 @@
 
 1. [Core JavaScript Concepts](#core-javascript-concepts)
    - [Local Storage](#local-storage)
+   - [Random Number generate](#random-number)
+   - [Drag and Drop](#Drag-Drop)
+   - [Date](#date)
    - [Prototype and Prototypal Inheritance](#prototype-and-prototypal-inheritance)
    - [Event Bubbling and Capturing](#event-bubbling-and-capturing)
    - [Event Delegation](#event-delegation)

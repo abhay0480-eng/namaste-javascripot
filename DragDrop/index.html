@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .task {
+          padding: 10px;
+          background: lightblue;
+          margin: 5px;
+          cursor: grab;
+          border: 1px solid #ccc;
+        }
+        .drag-over {
+          border: 2px dashed #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="taskList">
+        <div class="task" draggable="true">Task 1</div>
+        <div class="task" draggable="true">Task 2</div>
+        <div class="task" draggable="true">Task 3</div>
+      </div>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./dragDrop.js"></script>
+</body>
+</html>

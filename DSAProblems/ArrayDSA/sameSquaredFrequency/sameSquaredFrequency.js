@@ -6,11 +6,11 @@ function sameSquaredFrequency(arr1, arr2){
     let output = false
   for (let i = 0; i < arr1.length; i++) {
     const square = arr1[i] * arr1[i]
-    if(arr2.includes(square)){
-        output = true
-    } else{
-        output = false
-    }  
+      if(arr2.includes(square)){
+          output = true
+      } else{
+          output = false
+      }  
   }
 
   return output
